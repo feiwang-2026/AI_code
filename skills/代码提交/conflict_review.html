@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>Conflict Review — AI_git_test 2026-08-04</title>
+<style>
+  body { font-family: monospace; background: #f5f5f5; padding: 24px; margin: 0; }
+  h1 { font-size: 1.1em; color: #333; margin-bottom: 20px; }
+  section { background: #fff; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 24px; overflow: hidden; }
+  .file-header { background: #2d2d2d; color: #eee; padding: 8px 16px; font-size: 0.9em; }
+  .block-header { font-size: 0.78em; font-weight: bold; padding: 4px 16px; letter-spacing: 0.03em; }
+  .ours       { background: #ffe0e0; }
+  .theirs     { background: #e0ffe0; }
+  .resolution { background: #e0eeff; }
+  .sep        { background: #e8e8e8; padding: 3px 16px; color: #999; font-size: 0.8em; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; }
+  pre { margin: 0; padding: 8px 16px; white-space: pre-wrap; font-size: 0.88em; line-height: 1.5; }
+  .reason { font-size: 0.82em; color: #555; padding: 4px 16px 8px; font-style: italic; }
+</style>
+</head>
+<body>
+<h1>Conflict Review &mdash; AI_git_test &nbsp;|&nbsp; 2026-08-04</h1>
+
+<section>
+  <div class="file-header">&#128196; main.c &nbsp;&mdash;&nbsp; 1 conflict block</div>
+
+  <div class="block-header ours">&#9650; Ours &mdash; Updated upstream (origin/main)</div>
+  <pre class="ours">    printf(&quot;=============123Hello1 Worldi35!================\n\n&quot;);</pre>
+  <div class="reason" style="background:#ffe0e0">upstream change: incremented trailing number to 35</div>
+
+  <div class="sep">======= separator</div>
+
+  <div class="block-header theirs">&#9660; Theirs &mdash; Stashed changes (local)</div>
+  <pre class="theirs">    printf(&quot;=============123Hello1 Worldi36!================\n\n&quot;);</pre>
+  <div class="reason" style="background:#e0ffe0">local change: set trailing number to 36</div>
+
+  <div class="sep">======= resolution</div>
+
+  <div class="block-header resolution">&#10003; Resolution &mdash; Ours as base + local intent applied</div>
+  <pre class="resolution">    printf(&quot;=============123Hello1 Worldi36!================\n\n&quot;);</pre>
+  <div class="reason" style="background:#e0eeff">以 upstream 最新（i35）为基础，叠加本地修改意图（将尾部数字改为 36），最终采用 i36。</div>
+</section>
+
+</body>
+</html>
